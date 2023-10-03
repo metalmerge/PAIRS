@@ -1,0 +1,12 @@
+def validate_and_visualize(model, image_folder):
+    image_files = os.listdir(image_folder)
+
+    for image_file in image_files:
+        image_path = os.path.join(image_folder, image_file)
+        image = Image.open(image_path)
+        results = model(image)  # Run validation
+
+        for r in results:
+            im_array = r.plot()  # Plot predictions
+            im = Image.fromarray(im_array[..., ::-1])  # Convert to RGB PIL image
+            im.show()  # Show image
