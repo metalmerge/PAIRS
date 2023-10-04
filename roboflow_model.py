@@ -1,26 +1,19 @@
-import roboflow
+from roboflow import Roboflow
+import json
 
-rf = roboflow.Roboflow(api_key=YOUR_API_KEY_HERE)
+image_path = "/Users/dimaermakov/Downloads/test.png"
 
-project = rf.workspace().project("PROJECT_ID")
-model = project.version("1").model
+rf = Roboflow(api_key="meB2e1C0V6tbgN5Sq88K")
+project = rf.workspace().project("pulsar-detection")
+model = project.version(1).model
 
-# optionally, change the confidence and overlap thresholds
-# values are percentages
-model.confidence = 50
-model.overlap = 25
+# infer on a local image
+json_formatted_str = json.dumps(model.predict(image_path).json(), indent=2)
 
-# predict on a local image
-prediction = model.predict("YOUR_IMAGE.jpg")
+print(json_formatted_str)
 
-# Predict on a hosted image via file name
-# prediction = model.predict("YOUR_IMAGE.jpg", hosted=True)
+# infer on an image hosted elsewhere
+# print(model.predict("URL_OF_YOUR_IMAGE", hosted=True).json())
 
-# Predict on a hosted image via URL
-# prediction = model.predict("https://...", hosted=True)
-
-# Plot the prediction in an interactive environment
-prediction.plot()
-
-# Convert predictions to JSON
-prediction.json()
+# save an image annotated with your predictions
+# model.predict("your_image.jpg").save("prediction.jpg")
