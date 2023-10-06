@@ -49,7 +49,12 @@ output_folder = "/Users/dimaermakov/PULSAR/found_pulsars"
 os.makedirs(output_folder, exist_ok=True)
 
 # Initialize Roboflow API
-rf = Roboflow(api_key="meB2e1C0V6tbgN5Sq88K")
+api_key = os.environ.get("ROBOFLOW_API_KEY")
+
+if api_key is None:
+    raise ValueError("ROBOFLOW_API_KEY environment variable is not set.")
+
+rf = Roboflow(api_key=api_key)
 project = rf.workspace().project("updated-pulsar-database")
 model = project.version(1).model
 
