@@ -55,17 +55,11 @@ The PULSAR project can be customized and extended for various use cases. Here ar
 - Project Lead: Dimitry Ermakov
 - Data Source: Wenke Xia/NANOstars
 
-## Acknowledgments
-
-We would like to express our gratitude to Wenke Xia and NANOstars for their willingness in providing the pulsar data.
-
 ![NANOstars](NANOstars.png)
 
 ## Contact
 
-If you have any questions or suggestions, please feel free to contact us:
+If you have any questions or suggestions, please feel free to contact me:
 
 - [Email](ermakovd06@gmail.com)
 - [GitHub](https://github.com/metalmerge)
-
-Thank you for using PULSAR! We hope it helps you in your pulsar research and analysis.
