@@ -15,10 +15,7 @@ To get started with PULSAR, follow these steps:
      export ROBOFLOW_API_KEY="YOUR_API_KEY"
      ```
 
-2. **Data Credits:**
-   - Special thanks to Wenke Xia and NANOstars for providing the pulsar data used in this project. You can access the roboflow model [here](https://universe.roboflow.com/feresearchproject/updated-pulsar-database).
-
-3. **Installation:**
+2. **Installation:**
    - Clone this repository to your local machine:
 
      ```bash
@@ -26,7 +23,7 @@ To get started with PULSAR, follow these steps:
      cd pulsar-recognition
      ```
 
-4. **Run the Code:**
+3. **Run the Code:**
    - Execute the Python script to perform pulsar candidate detection and analysis.
 
 ## Usage
@@ -54,6 +51,10 @@ The PULSAR project can be customized and extended for various use cases. Here ar
 
 - Project Lead: Dimitry Ermakov
 - Data Source: Wenke Xia/NANOstars
+
+## Acknowledgments
+
+Special thanks to NANOstars for their willingness in providing the pulsar data and to Wenke Xia for the additional help with procuring the data.
 
 ![NANOstars](NANOstars.png)
 
