@@ -83,8 +83,8 @@ def predict_and_save(image_path):
             saved_file_count += 1
         else:
             print(f"File with the same name already exists: {image_name}")
-        if saved_file_count >= 150:
-            print("Reached the limit of 150 saved files. Stopping.")
+        if saved_file_count >= 100:
+            print("Reached the limit of 100 saved files. Stopping.")
             # Exit the function to stop processing more files
             os.system(
                 'osascript -e \'display notification "Predictions Done" with title "Done"\''
