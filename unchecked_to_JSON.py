@@ -4,28 +4,22 @@ from roboflow import Roboflow
 
 # Define the path to your JSON folder
 base_url = "https://pulsars.nanosta.rs/index.php?viewer&folder="
-json_folder_path = "/Users/dimaermakov/Downloads/known_Pulsar_Data_JSON_Folder"
-
+json_folder_path = "ratings_Unchecked.json"
+json_output_file_path = "found_Pulsar_Candidates.json"
 # Check if the folder exists
 if not os.path.exists(json_folder_path):
     print(f"JSON folder not found at {json_folder_path}")
 else:
     # Create a list to store the selected JSON objects
     selected_json_objects = []
-
     # Initialize Roboflow API
     api_key = os.environ.get("ROBOFLOW_API_KEY")
-
     if api_key is None:
         raise ValueError("ROBOFLOW_API_KEY environment variable is not set.")
-
     rf = Roboflow(api_key=api_key)
     project = rf.workspace().project("pulsarfinderimageclassification")
     model = project.version(2).model
     print("Model loaded")
-    # Define the path to your image folder
-    image_folder_path = "/Users/dimaermakov/Downloads/Pulsar_Dataset_unchecked"
-
     # Iterate through the JSON files in the folder
     for filename in os.listdir(json_folder_path):
         if filename.endswith(".json"):
@@ -34,7 +28,6 @@ else:
             # Load data from the JSON file
             with open(json_file_path, "r") as json_file:
                 data = json.load(json_file)
-
                 # Iterate through the data and check confidence
                 for item in data:
                     image_filename = item["file"]
@@ -42,7 +35,6 @@ else:
                     image_folder = item["folder"]
                     link = f"{base_url}{image_folder}&file={image_filename}"
                     item["link"] = link
-                    # image_path = os.path.join(image_folder_path, image_filename)
                     # Predict on the local image
                     if image_folder == "cands_S4.2":
                         try:
@@ -60,21 +52,14 @@ else:
                                 # print(item)
                         except Exception as e:
                             print(f"Error: {image_filename}")
-
-    # Define the path to save the selected JSON objects as a JSON file
-    json_output_file_path = "selected_Json_Objects_Unchecked.json"
-
     # Save the selected JSON objects as a JSON file
     with open(json_output_file_path, "w") as json_file:
         json.dump(selected_json_objects, json_file, indent=2)
-
     print(f"Selected JSON objects saved to {json_output_file_path}")
     with open(json_output_file_path, "r") as file:
         data = json.load(file)
-
     # Count the number of objects in the array
     num_objects = len(data)
-
     # Print the number of objects
     print("Number of objects in the array:", num_objects)
     os.system(
