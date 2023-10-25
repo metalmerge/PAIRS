@@ -4,7 +4,7 @@ from roboflow import Roboflow
 
 # Define the path to your JSON folder
 base_url = "https://pulsars.nanosta.rs/index.php?viewer&folder="
-json_folder_path = "ratings_Unchecked.json"
+json_folder_path = "JSON"
 json_output_file_path = "found_Pulsar_Candidates.json"
 # Check if the folder exists
 if not os.path.exists(json_folder_path):
@@ -36,22 +36,16 @@ else:
                     link = f"{base_url}{image_folder}&file={image_filename}"
                     item["link"] = link
                     # Predict on the local image
-                    if image_folder == "cands_S4.2":
-                        try:
-                            predictions = model.predict(image_path, hosted=True).json()
-                            top_prediction = predictions["predictions"][0]["top"]
-                            confidence = predictions["predictions"][0]["confidence"]
-                            if (
-                                top_prediction == "pulsar_candidate"
-                                and confidence >= 0.99
-                            ):
-                                print(
-                                    f"{image_filename}: {top_prediction} ({confidence})"
-                                )
-                                selected_json_objects.append(item)
-                                # print(item)
-                        except Exception as e:
-                            print(f"Error: {image_filename}")
+                    # if image_folder == "cands_S4.2":
+                    try:
+                        predictions = model.predict(image_path, hosted=True).json()
+                        top_prediction = predictions["predictions"][0]["top"]
+                        confidence = predictions["predictions"][0]["confidence"]
+                        if top_prediction == "pulsar_candidate" and confidence >= 0.99:
+                            print(f"{image_filename}: {top_prediction} ({confidence})")
+                            selected_json_objects.append(item)
+                    except Exception as e:
+                        print(f"Error: {image_filename}")
     # Save the selected JSON objects as a JSON file
     with open(json_output_file_path, "w") as json_file:
         json.dump(selected_json_objects, json_file, indent=2)
