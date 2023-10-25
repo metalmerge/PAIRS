@@ -2,8 +2,9 @@ import json
 import os
 import requests
 
-json_file_path = "ratings_checked.json"
-
+json_file_path = "ratings_Checked.json"
+folder_none = "known_Pulsar_Data_JSON_Folder/radio_frequency_interference"
+folder_other = "known_Pulsar_Data_JSON_Folder/pulsar_candidate"
 # Check if the JSON file exists
 if not os.path.exists(json_file_path):
     print(f"JSON file not found at {json_file_path}")
@@ -13,8 +14,6 @@ else:
         data = json.load(json_file)
 
     # Create folders if they don't exist
-    folder_none = "known_Pulsar_Data_JSON_Folder/radio_frequency_interference"
-    folder_other = "known_Pulsar_Data_JSON_Folder/pulsar_candidate"
     os.makedirs(folder_none, exist_ok=True)
     os.makedirs(folder_other, exist_ok=True)
 
