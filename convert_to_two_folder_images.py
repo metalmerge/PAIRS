@@ -12,7 +12,6 @@ else:
     # Load data from the JSON file
     with open(json_file_path, "r") as json_file:
         data = json.load(json_file)
-
     # Create folders if they don't exist
     os.makedirs(folder_none, exist_ok=True)
     os.makedirs(folder_other, exist_ok=True)
@@ -21,17 +20,14 @@ else:
     for item in data:
         file_name = item["file"]
         result = item["checked"]["result"]
-
         # Determine the folder based on the result
         if result == "&lt;none&gt;":
             folder_path = folder_none
         else:
             folder_path = folder_other
-
         # Download the image
         image_url = item["remoteUrl"]
         response = requests.get(image_url)
-
         if response.status_code == 200:
             # Save the image to the appropriate folder
             image_path = os.path.join(folder_path, file_name)

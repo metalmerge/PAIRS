@@ -4,7 +4,7 @@ import requests
 from PIL import Image
 
 json_file_path = "ratings_Unchecked.json"
-output_folder_path = "Pulsar_Dataset_unchecked"
+output_folder_path = "pulsar_Dataset_Unchecked"
 
 if not os.path.exists(json_file_path):
     print(f"JSON file not found at {json_file_path}")
