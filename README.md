@@ -32,10 +32,10 @@ To get started with PULSAR, follow these steps:
 
 ## Usage
 
-The JSON_to_images folder is used for converting checked JSON to images to use for training data.
-JSON_input is for the unchecked or checked input JSON data
-JSON_output is for the output of JSON files.
-known_JSON_Pulsar_Data is for the two folders of known pulsar candidates and RFI
+- The JSON_to_images folder is used for converting checked JSON to images to use for training data.
+- JSON_input is for the unchecked or checked input JSON data.
+- JSON_output is for the output of JSON files.
+- known_JSON_Pulsar_Data is for the two folders of known pulsar candidates and RFI.
 
 ## Contributors
 
