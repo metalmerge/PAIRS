@@ -9,7 +9,7 @@ PULSAR is an advanced Image Recognition System powered by Artificial Intelligenc
 To get started with PULSAR, follow these steps:
 
 1. **API Key Setup:**
-   - Export your Roboflow API key as an environment variable:
+   - Export your Roboflow API key as an environment variable. Getting an API key is done by deploying this roboflow model: <https://app.roboflow.com/pulsarfinderthroughimageclassification/pulsarfinderimageclassification/deploy/2>
 
      ```bash
      export ROBOFLOW_API_KEY="YOUR_API_KEY"
@@ -19,44 +19,34 @@ To get started with PULSAR, follow these steps:
    - Clone this repository to your local machine:
 
      ```bash
-     git clone https://github.com/your-username/pulsar-recognition.git
-     cd pulsar-recognition
+     git clone https://github.com/metalmerge/PULSAR.git
+     cd PULSAR
      ```
 
 3. **Run the Code:**
-   - Execute the Python script to perform pulsar candidate detection and analysis.
+   - Execute predict_unchecked_JSON.py to run the pulsar candiate model predictor. A JSON file will be returned with all the selected pulsar candidates.
+  
+    ```bash
+     python3 predict_unchecked_JSON.py
+     ```
 
 ## Usage
 
-The PULSAR project can be customized and extended for various use cases. Here are some common tasks you can perform:
-
-- **Data Preparation:**
-  - Ensure that your pulsar image data is organized in a folder structure that matches the expected format.
-  - Prepare JSON files containing metadata and image URLs.
-
-- **Configuration:**
-  - Configure the ROBOFLOW_API_KEY environment variable with your Roboflow API key.
-
-- **Training and Inference:**
-  - Train and fine-tune the machine learning model using your own data if needed.
-  - Perform inference on pulsar image candidates to classify and identify pulsars.
-
-- **Data Analysis:**
-  - Analyze the predictions and confidence scores to identify pulsars accurately.
-
-- **Results:**
-  - View and export the results, which include selected JSON objects with high-confidence pulsar predictions.
+The JSON_to_images folder is used for converting checked JSON to images to use for training data.
+JSON_input is for the unchecked or checked input JSON data
+JSON_output is for the output of JSON files.
+known_JSON_Pulsar_Data is for the two folders of known pulsar candidates and RFI
 
 ## Contributors
 
 - Project Lead: Dimitry Ermakov
-- Data Source: Wenke Xia/NANOstars
+- Data Source: NANOstars (Wenke Xia)
 
 ## Acknowledgments
 
 Special thanks to NANOstars for their willingness in providing the pulsar data and to Wenke Xia for the additional help with procuring the data.
 
-![NANOstars](NANOstars.png)
+![NANOstars](images/NANOstars.png)
 
 ## Contact
 

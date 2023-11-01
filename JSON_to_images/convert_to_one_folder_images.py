@@ -3,8 +3,8 @@ import os
 import requests
 from PIL import Image
 
-json_file_path = "ratings_Unchecked.json"
-output_folder_path = "pulsar_Dataset_Unchecked"
+json_file_path = "JSON_input/ratings_pks70a_unchecked.json"
+output_folder_path = "known_JSON_Pulsar_Data"
 
 if not os.path.exists(json_file_path):
     print(f"JSON file not found at {json_file_path}")
@@ -12,7 +12,7 @@ else:
     # Load data from the JSON file
     with open(json_file_path, "r") as json_file:
         data = json.load(json_file)
-    # Create folders if they don't exist
+    # Create folder if it does not exist
     os.makedirs(output_folder_path, exist_ok=True)
     # Iterate through the data and download images
     for item in data:
@@ -28,7 +28,6 @@ else:
                 image_file.write(response.content)
                 print(f"Downloaded {file_name} to {output_folder_path}")
             image = Image.open(image_path)
-            # image = image.resize((1100, 850))
             image.save(image_path)
         else:
             print(f"Failed to download {file_name}")

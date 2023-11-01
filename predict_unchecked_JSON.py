@@ -2,11 +2,9 @@ import json
 import os
 from roboflow import Roboflow
 
-# Define the path to your JSON folder
 base_url = "https://pulsars.nanosta.rs/index.php?viewer&folder="
-json_folder_path = "JSON"
-json_output_file_path = "found_Pulsar_Candidates.json"
-# Check if the folder exists
+json_folder_path = "JSON_input"
+json_output_file_path = "JSON_output/found_Pulsar_Candidates.json"
 if not os.path.exists(json_folder_path):
     print(f"JSON folder not found at {json_folder_path}")
 else:

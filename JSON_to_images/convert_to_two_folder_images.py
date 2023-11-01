@@ -2,9 +2,9 @@ import json
 import os
 import requests
 
-json_file_path = "ratings_Checked.json"
-folder_none = "known_Pulsar_Data_JSON_Folder/radio_frequency_interference"
-folder_other = "known_Pulsar_Data_JSON_Folder/pulsar_candidate"
+json_file_path = "JSON_input/ratings_pks70a_unchecked.json"
+folder_none = "known_JSON_Pulsar_Data/radio_frequency_interference"
+folder_other = "known_JSON_Pulsar_Data/pulsar_candidate"
 # Check if the JSON file exists
 if not os.path.exists(json_file_path):
     print(f"JSON file not found at {json_file_path}")
@@ -26,7 +26,7 @@ else:
         else:
             folder_path = folder_other
         # Download the image
-        image_url = item["remoteUrl"]
+        image_url = item["image_url"]
         response = requests.get(image_url)
         if response.status_code == 200:
             # Save the image to the appropriate folder
