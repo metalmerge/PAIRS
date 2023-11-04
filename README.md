@@ -30,6 +30,12 @@ To get started with PULSAR, follow these steps:
      python3 predict_unchecked_JSON.py
      ```
 
+   - Run low_DM_Remover.py to remove any candidates with DM < 1 from found_Pulsar_Candidates.json.
+
+    ```bash
+     python3 low_DM_Remover.py
+     ```
+
 ## Usage
 
 - The JSON_to_images folder is used for converting checked JSON to images to use for training data.

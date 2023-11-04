@@ -36,7 +36,7 @@ for item in data:
     if image_url:
         text = extract_text_from_coordinates(image_url, 826, 138, 933, 156)
         numeric_value = text_to_float(text)
-        if numeric_value is not None and numeric_value > 1:
+        if numeric_value is not None and numeric_value >= 1:
             # print(numeric_value)
             filtered_data.append(item)
 
