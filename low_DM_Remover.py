@@ -28,10 +28,8 @@ def text_to_float(text):
 # Load the JSON file
 with open("JSON_output/found_Pulsar_Candidates.json", "r") as json_file:
     data = json.load(json_file)
-
 # Filter and create a new JSON file
 filtered_data = []
-
 for item in data:
     image_url = item.get("image_url")
     # print(image_url)
@@ -43,7 +41,7 @@ for item in data:
             filtered_data.append(item)
 
 # Save the filtered data to a new JSON file
-with open("output.json", "w") as output_file:
+with open("JSON_output/no_Low_DM_Found_Candidates.json", "w") as output_file:
     json.dump(filtered_data, output_file, indent=4)
 
 print("Extraction and filtering complete. Check 'output.json' for the filtered data.")

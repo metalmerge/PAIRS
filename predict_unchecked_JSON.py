@@ -42,7 +42,7 @@ def main():
     os.system(
         'osascript -e \'display notification "Predictions Done" with title "Done"\''
     )
-    os.system("sleep 5")
+    # os.system("sleep 5")
 
 
 def process_json_file(json_file_path, base_url, model, selected_json_objects):
