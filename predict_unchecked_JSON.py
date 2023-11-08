@@ -20,7 +20,7 @@ def main():
 
     rf = Roboflow(api_key=api_key)
     project = rf.workspace().project("pulsarfinderimageclassification")
-    model = project.version(2).model
+    model = project.version(3).model
 
     print("Model loaded")
 

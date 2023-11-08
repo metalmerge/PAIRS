@@ -32,12 +32,11 @@ with open("JSON_output/found_Pulsar_Candidates.json", "r") as json_file:
 filtered_data = []
 for item in data:
     image_url = item.get("image_url")
-    # print(image_url)
     if image_url:
         text = extract_text_from_coordinates(image_url, 826, 138, 933, 156)
         numeric_value = text_to_float(text)
         if numeric_value is not None and numeric_value >= 1:
-            # print(numeric_value)
+            # print(f"{image_url} {numeric_value}")
             filtered_data.append(item)
 
 # Save the filtered data to a new JSON file

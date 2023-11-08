@@ -3,8 +3,8 @@ import os
 import requests
 from PIL import Image
 
-json_file_path = "JSON_input/ratings_pks70a_unchecked.json"
-output_folder_path = "known_JSON_Pulsar_Data"
+json_file_path = "../JSON_output/above_One_found_Pulsar_Candidates.json"
+output_folder_path = "../JSON_output/known_JSON_Pulsar_Data"
 
 if not os.path.exists(json_file_path):
     print(f"JSON file not found at {json_file_path}")
