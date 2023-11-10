@@ -9,11 +9,11 @@ PULSAR is an advanced Image Recognition System powered by Artificial Intelligenc
 To get started with PULSAR, follow these steps:
 
 1. **API Key Setup:**
-   - Create a config.ini file to store your API key in this format:
+   - Create a config.ini file to store your API key in this format, quotation marks are not used:
 
       ```ini
       [Credentials]
-      ROBOFLOW_API_KEY = "API_KEY"
+      ROBOFLOW_API_KEY = API_KEY
       ```
 
 2. **Installation:**
