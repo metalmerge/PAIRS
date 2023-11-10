@@ -9,11 +9,12 @@ PULSAR is an advanced Image Recognition System powered by Artificial Intelligenc
 To get started with PULSAR, follow these steps:
 
 1. **API Key Setup:**
-   - Export your Roboflow API key as an environment variable. Getting an API key is done by deploying this roboflow model: <https://app.roboflow.com/pulsarfinderthroughimageclassification/pulsarfinderimageclassification/deploy/2>
+   - Create a config.ini file to store your API key in this format:
 
-     ```bash
-     export ROBOFLOW_API_KEY="YOUR_API_KEY"
-     ```
+      ini ```
+    [Credentials]
+    ROBOFLOW_API_KEY = "API_KEY"
+      ini```
 
 2. **Installation:**
    - Clone this repository to your local machine:

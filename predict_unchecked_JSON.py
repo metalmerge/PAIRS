@@ -1,6 +1,8 @@
 import json
 import os
 from roboflow import Roboflow
+import configparser
+import sys
 
 
 def main():
@@ -14,9 +16,16 @@ def main():
 
     selected_json_objects = []
 
-    api_key = os.environ.get("ROBOFLOW_API_KEY")
-    if api_key is None:
-        raise ValueError("ROBOFLOW_API_KEY environment variable is not set.")
+    # Load the configuration file
+    config = configparser.ConfigParser()
+    config.read("config.ini")
+
+    # Retrieve the phone number from the configuration file
+    try:
+        api_key = config.get("Credentials", "ROBOFLOW_API_KEY")
+    except configparser.Error:
+        print("Error: Unable to read the configuration file.")
+        sys.exit(1)
 
     rf = Roboflow(api_key=api_key)
     project = rf.workspace().project("pulsarfinderimageclassification")
