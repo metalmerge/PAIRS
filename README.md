@@ -11,10 +11,10 @@ To get started with PULSAR, follow these steps:
 1. **API Key Setup:**
    - Create a config.ini file to store your API key in this format:
 
-      ini ```
-    [Credentials]
-    ROBOFLOW_API_KEY = "API_KEY"
-      ini```
+      ```ini
+      [Credentials]
+      ROBOFLOW_API_KEY = "API_KEY"
+      ```
 
 2. **Installation:**
    - Clone this repository to your local machine:
