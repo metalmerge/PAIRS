@@ -1,8 +1,8 @@
-# PULSAR - Pulsar Image Recognition System
+# PAIRS: Pulsar AI Image Recognition System
 
 ## Introduction
 
-PULSAR is an advanced Image Recognition System powered by Artificial Intelligence, designed for the detection and analysis of pulsar candidates. This project aims to add another filter to the identification of pulsars in astronomical data by leveraging machine learning models.
+PAIRS is an Image Recognition System powered by Artificial Intelligence, designed for the detection and analysis of pulsar candidates. This project aims to add another filter to the identification of pulsars in astronomical data by leveraging machine learning models.
 
 ## Getting Started
 
