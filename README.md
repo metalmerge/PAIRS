@@ -9,7 +9,7 @@ PAIRS is an Image Recognition System powered by Artificial Intelligence, designe
 To get started with PULSAR, follow these steps:
 
 1. **API Key Setup:**
-   - Create a config.ini file to store your API key in this format, quotation marks are not used:
+   - Deploy this Roboflow model to obtain an API key: <https://app.roboflow.com/pulsarfinderthroughimageclassification/pulsarfinderimageclassification/deploy/3>. Then create a config.ini file to store the API key in this format, quotation marks are not used:
 
       ```ini
       [Credentials]
@@ -23,6 +23,12 @@ To get started with PULSAR, follow these steps:
      git clone https://github.com/metalmerge/PULSAR.git
      cd PULSAR
      ```
+
+   - Run this command to download all the requirements:
+  
+      ```bash
+      pip install -r requirements.txt
+      ```
 
 3. **Run the Code:**
    - Execute predict_unchecked_JSON.py to run the pulsar candiate model predictor. A JSON file will be returned with all the selected pulsar candidates.
